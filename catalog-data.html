@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AstroPlan Catalog Data &amp; License</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         max-width: 680px; margin: 40px auto; padding: 0 20px; line-height: 1.55;
+         color: #1c1c1e; }
+  h1 { font-size: 1.6em; }
+  h2 { font-size: 1.15em; margin-top: 1.6em; }
+  p, li { color: #3a3a3c; }
+  code { background: rgba(127,127,127,0.15); padding: 0.1em 0.4em; border-radius: 4px;
+         font-size: 0.9em; }
+  ul { padding-left: 1.3em; }
+  footer { margin-top: 3em; font-size: 0.85em; color: #8e8e93; }
+  a { color: #007aff; }
+  .files { display: flex; gap: 12px; flex-wrap: wrap; margin: 1em 0; }
+  .files a { display: inline-block; padding: 8px 14px; border: 1px solid rgba(127,127,127,0.35);
+             border-radius: 8px; text-decoration: none; font-size: 0.9em; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #000; color: #f2f2f7; }
+    p, li { color: #c7c7cc; }
+    footer { color: #8e8e93; }
+    code { background: rgba(255,255,255,0.12); }
+  }
+</style>
+</head>
+<body>
+<h1>AstroPlan Catalog Data &amp; License</h1>
+<p><em>Last updated: July 2026</em></p>
+
+<p>AstroPlan's deep-sky object catalog is built on <a href="https://github.com/mattiaverga/OpenNGC">OpenNGC</a>
+by Mattia Verga, licensed under
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+That license lets anyone use, adapt, and redistribute the data — including
+commercially — provided adaptations are credited and shared under the same
+terms. This page exists to satisfy that: it documents exactly what AstroPlan
+changed, and makes the source data and our modifications available under
+the same CC BY-SA 4.0 license.</p>
+
+<h2>Original source data</h2>
+<p>These are the unmodified OpenNGC files bundled in the app, exactly as
+published by the original author:</p>
+<div class="files">
+  <a href="data/NGC.csv">NGC.csv</a>
+  <a href="data/addendum.csv">addendum.csv</a>
+</div>
+
+<h2>What AstroPlan changes at import</h2>
+<p>AstroPlan does not alter these source files. Instead, at catalog import
+time it applies a documented set of corrections and additions — cross-
+referencing other public catalogs, fixing a small number of errors, and
+supplementing common names. The complete, structured list of every change
+is published here:</p>
+<div class="files">
+  <a href="data/modifications.json">modifications.json</a>
+</div>
+
+<p>In summary, the modifications are:</p>
+<ul>
+  <li><strong>Caldwell catalogue numbers</strong> — OpenNGC does not include
+    Caldwell numbers; 105 are added by cross-reference, including two
+    (C37, C50) redirected to the surviving object where OpenNGC's own data
+    marks the traditional designation as a duplicate.</li>
+  <li><strong>Messier 102</strong> — OpenNGC marks M102 as a duplicate of
+    M101 with no data of its own. Modern consensus (SIMBAD/NED) identifies
+    it as NGC&nbsp;5866; that assignment is added back.</li>
+  <li><strong>One type-code correction</strong> — NGC&nbsp;6611 (M16) is
+    tagged as a nebula in OpenNGC; it is the star cluster (IC&nbsp;4703 is
+    the nebula it illuminates), matching SIMBAD/NED classification.</li>
+  <li><strong>Common names</strong> — 45 Messier objects, 28 Caldwell
+    objects, and 29 other objects gain common names absent from OpenNGC
+    (sourced from Wikipedia's Messier/Caldwell tables, or well-established
+    astrophotography usage), appended after any name OpenNGC already lists.</li>
+  <li><strong>Herschel 400 program</strong> — encoded as a set of 402 NGC
+    numbers (the program has 400 entries; three are traditionally listed
+    under a pair of numbers for the same object). Six further entries are
+    redirected to their surviving non-duplicate counterpart where OpenNGC
+    marks the traditional number as a duplicate.</li>
+  <li><strong>Cross-catalog merges</strong> — a small number of Sharpless
+    and RCW entries (6 total) are identified as the same physical object as
+    an existing NGC/IC entry and merged rather than listed twice, where the
+    automatic cross-reference detection didn't catch it.</li>
+</ul>
+
+<h2>License</h2>
+<p>This page and the files linked above are licensed
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>,
+consistent with the original OpenNGC license. Attribution: catalog data
+originally by Mattia Verga (OpenNGC); modifications by AstroPlan.</p>
+
+<h2>Other catalogs used</h2>
+<p>AstroPlan also bundles data from the Sharpless, RCW, Lynds (LDN), and
+Barnard catalogues, obtained via the
+<a href="https://cds.unistra.fr/vizier-org/licences_vizier.html">VizieR catalogue access tool</a>,
+CDS, Strasbourg, and Digitized Sky Survey imagery via the CDS
+<a href="https://alasky.cds.unistra.fr/hips-image-services/hips2fits">hips2fits</a>
+service. Full citations for each are listed in the app's About screen.</p>
+
+<h2>Contact</h2>
+<p>Questions about this data or its licensing can be sent to
+<a href="mailto:userx7@gmail.com">userx7@gmail.com</a>.</p>
+
+<footer><a href="index.html">← Privacy Policy</a> · AstroPlan</footer>
+</body>
+</html>
